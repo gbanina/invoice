@@ -88,6 +88,7 @@ class MyDataController extends Controller
         $data->country = '';
         $data->iban = '';
         $data->bank = '';
+        $data->zip = '';
         $data->save();
 
         return $data;
