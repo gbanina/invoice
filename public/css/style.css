@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.float-right {
+    float: right;
+}
+.edit-wrap {
+  display: inline-flex;
+}
+
+.edit-wrap a {
+  padding: 5px;
+}
+
+.invoice-form {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand {
+      margin-right: 40px;
+  }
+}
+
+.panel-heading {
+    font-size: 20px;
+}
+a, a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.invoice_number {
+  width: 100px;
+  float: left;
+}
+
+.invoice-doubble {
+  padding-right: 15px;
+}
+.invoice-item-icon {
+  top: 10px;
+}
+th.invoice-item-number {
+  padding-top: 15px !important;
+}
+.edit-wrap{
+  border-top:none !important;
+}
