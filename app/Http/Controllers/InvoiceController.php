@@ -204,9 +204,9 @@ class InvoiceController extends Controller
 
     public function email($id)
     {
-        $attach = $this->pdfAttach($id);
-        $email = "gbanina@gmail.com";
         $invoice = Invoice::find($id);
+        $attach = $this->pdfAttach($id);
+        $email = $invoice->customer->email;
         $my = MyData::find(Auth::user()->id);
 
         $data = [

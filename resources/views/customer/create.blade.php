@@ -27,7 +27,7 @@
                       {!! Form::open(array('url' => url('/customers'), 'class' => 'form-horizontal form-label-left invoice-form')) !!}
                         <div class="form-group">
                           <label for="customerName">Customer Name</label>
-                          <input type="number" class="form-control" id="customerName" name="name" value="{{ old('name') }}" placeholder="Customer name here">
+                          <input type="text" class="form-control" id="customerName" name="name" value="{{ old('name') }}" placeholder="Customer name here">
                         </div>
                         <div class="form-group">
                           <label for="customerAdress">Customer Adress</label>
