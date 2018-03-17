@@ -82,7 +82,14 @@ class InvoiceController extends Controller
         $invoice->year = Input::get('year');
         $invoice->currency = Input::get('currency');
 
-        $invoice->hash = Hash::make(time() . Auth::user()->id);
+        $hash = Hash::make(time() . Auth::user()->id);
+
+        $hash = str_replace('&', '', $hash);
+        $hash = str_replace('.', '', $hash);
+        $hash = str_replace('?', '', $hash);
+        $hash = str_replace('/', '', $hash);
+
+        $invoice->hash = $hash;
 
         $items = array();
         $descriptions = Input::get('item_desc');
@@ -189,7 +196,6 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($id)->first();
         $apiUrl = InvoiceHelp::pdfApiURL(\URL::to('i/'.$invoice->hash));
         $filename = 'invoice-'.time().'.pdf';
-        $fileLoc =
         $pdf = public_path() . '/storage/pdf/' . $filename;//tempnam(public_path() . '/storage/pdf/', $filename);
         copy($apiUrl, $pdf);
 
@@ -207,6 +213,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($id);
         $attach = $this->pdfAttach($id);
         $email = $invoice->customer->email;
+
         $my = MyData::find(Auth::user()->id);
 
         $data = [

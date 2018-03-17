@@ -9,9 +9,11 @@ class InvoiceHelp {
   }
 
   public static function pdfApiURL($htmlURL){
+
     if(env('APP_DEBUG', false)){
       $htmlURL = "https://pdflayer.com/downloads/invoice.html";
     }
+
     $url = "http://api.pdflayer.com/api/convert?access_key=";
     $url .= env('PDFLAYER_API', false);
     $url .= "&document_url=" . $htmlURL;
