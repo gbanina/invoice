@@ -13,7 +13,7 @@ class InvoiceHelp {
     if(env('APP_DEBUG', false)){
       $htmlURL = "https://pdflayer.com/downloads/invoice.html";
     }
-    $htmlURL = urlencode($htmlURL);
+
     $url = "http://api.pdflayer.com/api/convert?access_key=";
     $url .= env('PDFLAYER_API', false);
     $url .= "&document_url=" . $htmlURL;

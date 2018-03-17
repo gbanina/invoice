@@ -82,13 +82,13 @@ class InvoiceController extends Controller
         $invoice->year = Input::get('year');
         $invoice->currency = Input::get('currency');
 
-        $hash = Hash::make(time() . Auth::user()->id);
-
+        $hash = /*Hash::make*/(time() . Auth::user()->id);
+/*
         $hash = str_replace('&', '', $hash);
         $hash = str_replace('.', '', $hash);
         $hash = str_replace('?', '', $hash);
         $hash = str_replace('/', '', $hash);
-
+*/
         $invoice->hash = $hash;
 
         $items = array();
