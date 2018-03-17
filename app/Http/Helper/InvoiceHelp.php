@@ -18,7 +18,7 @@ class InvoiceHelp {
     $url .= env('PDFLAYER_API', false);
     $url .= "&document_url=" . $htmlURL;
     $url .= "&page_size=A4";
-    if(env('APP_DEBUG', false)){
+    if(env('APP_DEBUG', false)||true){
       $url .= "&test=1";
     }
 
