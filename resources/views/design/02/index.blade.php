@@ -202,7 +202,7 @@
               <br>
               <br>
                 USER: &emsp;&emsp; {{$myData->name . ', ' . $myData->sufix . ', vl.' . $myData->owner . ', ' }}<br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;{{$myData->street . ', ' . $myData->zip . ' '. $myData->city . ', ' . $myData->country}}<br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{$myData->street . ', ' . $myData->zip . ' '. $myData->city . ', ' . $myData->country}}<br>
                 BANK: &emsp;&emsp; {{$myData->bank}} <br>
                 IBAN:&ensp;  &emsp;&emsp; {{$myData->iban}} <br>
 
