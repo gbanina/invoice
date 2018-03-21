@@ -28,7 +28,7 @@
               </tr>
             </tbody></table>
         <p style="font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Lucida Grande&quot;,sans-serif;font-size:14px;font-weight:normal;margin:0;margin-bottom:15px;padding:0">If you didn't expect this email, please <a href="%unsubscribe_url%" style="box-sizing:border-box;color:#348eda;font-weight:bold;text-decoration:underline" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://email.mailgun.net/u/eJwVy0EOwiAQAMDXlCMBll3gsAei4R-UFSSxmJj6f2vmPMI2qMnO2GDQJnPBqAEogYZCt3tGhBJKzAU3b446X-O79Hqc6sk9kMTuBFPdoTtPSNSMJA_YSMiqD4-9rrnqVcf_6vY-1Mmbyz9rqSFJ&amp;source=gmail&amp;ust=1495309839815000&amp;usg=AFQjCNGn0FGi7Op9SSn2SzJbqrO3rq7atA">unsubscribe</a>.</p>
-            <p style="font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Lucida Grande&quot;,sans-serif;font-size:14px;font-weight:normal;margin:0;margin-bottom:15px;padding:0">Thanks, Teambiosis Team</p>
+            <p style="font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Lucida Grande&quot;,sans-serif;font-size:14px;font-weight:normal;margin:0;margin-bottom:15px;padding:0">Thanks, ReInvoice Team</p>
           </td>
         </tr>
       </tbody></table>
