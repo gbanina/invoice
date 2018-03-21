@@ -201,7 +201,8 @@
                             <td class="footer-info">
               <br>
               <br>
-                <small>USER: &emsp;&emsp; {{$myData->name . ', ' . $myData->sufix . ', vl.' . $myData->owner . ', ' . $myData->street . ', ' . $myData->zip . ' '. $myData->city . ', ' . $myData->country}}</small><br>
+                USER: &emsp;&emsp; {{$myData->name . ', ' . $myData->sufix . ', vl.' . $myData->owner . ', ' . $myData->street . ', '}}<br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;{{$myData->zip . ' '. $myData->city . ', ' . $myData->country}}<br>
                 BANK: &emsp;&emsp; {{$myData->bank}} <br>
                 IBAN:&ensp;  &emsp;&emsp; {{$myData->iban}} <br>
 
