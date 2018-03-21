@@ -193,7 +193,7 @@ class InvoiceController extends Controller
 
     private function pdfAttach($id)
     {
-        $invoice = Invoice::find($id)->first();
+        $invoice = Invoice::find($id);
         $apiUrl = InvoiceHelp::pdfApiURL(\URL::to('i/'.$invoice->hash));
         $filename = 'invoice-'.time().'.pdf';
         $pdf = public_path() . '/storage/pdf/' . $filename;//tempnam(public_path() . '/storage/pdf/', $filename);
