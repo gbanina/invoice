@@ -11,14 +11,15 @@ class InvoiceHelp {
   public static function pdfApiURL($htmlURL){
 
     if(env('APP_DEBUG', false)){
-      $htmlURL = "https://pdflayer.com/downloads/invoice.html";
+      //$htmlURL = "https://pdflayer.com/downloads/invoice.html";
+      $htmlURL = "http://invoice.recode.hr/i/15213208981";
     }
 
     $url = "http://api.pdflayer.com/api/convert?access_key=";
     $url .= env('PDFLAYER_API', false);
     $url .= "&document_url=" . $htmlURL;
     $url .= "&page_size=A4";
-    if(env('APP_DEBUG', false)||true){
+    if(env('APP_DEBUG', false)){
       $url .= "&test=1";
     }
 

@@ -201,7 +201,7 @@
                             <td class="footer-info">
               <br>
               <br>
-                USER: &emsp;&emsp; {{$myData->name . ', ' . $myData->sufix . ', vl.' . $myData->owner . ', ' . $myData->street . ', ' . $myData->zip . ' '. $myData->city . ', ' . $myData->country}}<br>
+                <small>USER: &emsp;&emsp; {{$myData->name . ', ' . $myData->sufix . ', vl.' . $myData->owner . ', ' . $myData->street . ', ' . $myData->zip . ' '. $myData->city . ', ' . $myData->country}}</small><br>
                 BANK: &emsp;&emsp; {{$myData->bank}} <br>
                 IBAN:&ensp;  &emsp;&emsp; {{$myData->iban}} <br>
 
@@ -215,7 +215,7 @@
                 </td>
             </tr>
       <tr class="information footer-issued">
-        <td colspan="3">
+        <td colspan="3" style="padding-left: 35%">
           <br>
           <br>
           Račun izdao: {{$myData->owner}}
