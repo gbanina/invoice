@@ -213,6 +213,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($id);
         $attach = $this->pdfAttach($id);
         $email = $invoice->customer->email;
+        $number = $invoice->getNumberHuman();
 
         $my = MyData::find(Auth::user()->id);
 
@@ -220,12 +221,13 @@ class InvoiceController extends Controller
             'customer_name' => $invoice->customer->name,
             'my_name' => $my->owner,
             'paid_link' => \URL::to('p/' . $invoice->hash),
+            'invoice_number' => $invoice->getNumberHuman(),
         ];
 
-        $response = Mail::send('email.send', $data , function ($message) use ($email, $attach)
+        $response = Mail::send('email.send', $data , function ($message) use ($email, $attach, $number)
         {
             $message->subject('You have a new invoice!');
-            $message->from('postmaster@invoice.recode.hr', 'ReInvoices');
+            $message->from('postmaster@invoice.recode.hr', 'ReInvoices ' . $number);
             $message->to($email);
             $message->attach($attach);
         });

@@ -23,4 +23,9 @@ class Invoice extends Model
     {
       return date("d.m.Y.", strtotime ($this->issue_date));
     }
+
+    public function getNumberHuman()
+    {
+      return $this->number . '/1/1';
+    }
 }

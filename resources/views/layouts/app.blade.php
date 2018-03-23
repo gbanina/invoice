@@ -32,7 +32,7 @@
                     </button>
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        RE<div style="color: #e74430;display: inline;">Invoices</div>
+                        RE<div style="color: #e74430;display: inline;">Invoices </div>@if(env('APP_DEBUG', false))  <strong>{{'[Demo]'}}</strong> @endif
                     </a>
                     @guest
                     @else
