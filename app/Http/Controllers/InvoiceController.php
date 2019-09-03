@@ -16,6 +16,7 @@ use App\Http\Helper\InvoiceHelp;
 use Illuminate\Support\Facades\Hash;
 use DB;
 use Pdf;
+use DNS2D;
 
 class InvoiceController extends Controller
 {
@@ -36,8 +37,14 @@ class InvoiceController extends Controller
      */
     public function index(Request $request)
     {
+      $zaglavlje = "HRVHUB30";
+      $valuta = "HRK";
+      $iznos = "000000000000100"; // 1kn
+      $naziv_platitelj = "";
+      $adresa_platitelj = "";
+      $iban = "";
 
-
+      $barcode = (DNS2D::getBarcodeSVG("4445645656", "PDF417"));
 
         //$document = Pdf::generatePdf('<h1>Test</h1>');
         //pdf::stream('<h1>Test</h1>') ;
@@ -56,7 +63,7 @@ class InvoiceController extends Controller
         $years = DB::table('invoices')->distinct()->get(['year']);
 
         return view('invoice.index')->with('invoices', $invoices->get())->with('years', $years)
-            ->with('sum', $invoices->sum('total'))->with('btnColor', $btnColor);
+            ->with('sum', $invoices->sum('total'))->with('btnColor', $btnColor)->with('barcode', $barcode);
     }
 
     /**

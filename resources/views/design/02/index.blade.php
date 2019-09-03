@@ -28,6 +28,10 @@
     }
 
     .invoice-box table tr td:nth-child(2){
+        text-align:left;
+    }
+
+    .invoice-box table tr td:nth-child(3){
         text-align:right;
     }
 
@@ -116,8 +120,13 @@
                 <strong>
                   {{$invoice->customer->name}}<br>
                   {{$invoice->customer->adress}}<br>
-                  {{'OIB: ' . $invoice->customer->vat}}
+                  {{'OIB: ' . $invoice->customer->vat}}<br>
                 </strong>
+
+
+                            </td>
+                            <td>
+
                             </td>
 
                             <td>
@@ -210,6 +219,8 @@
 
                             <td>
                                 <!-- under right -->
+                                code
+                                {!! $barcode !!}
                             </td>
                         </tr>
                     </table>

@@ -166,6 +166,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
+        Milon\Barcode\BarcodeServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -232,6 +233,8 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         //PDF' => Barryvdh\DomPDF\Facade::class,
         'Pdf'  => NahidulHasan\Html2pdf\Facades\Pdf::class,
+        'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+        'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
 
     ],
 
