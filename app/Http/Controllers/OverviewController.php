@@ -61,7 +61,7 @@ class OverviewController extends Controller
         ->where("year", $year)->whereBetween('billing_date', [$from2, $to2])->sum("total");
 
         $invoices3 = Invoice::where('user_id', Auth::user()->id)
-        ->where("year", $year)->whereBetween('billing_date', [$from3, $to2])->sum("total");
+        ->where("year", $year)->whereBetween('billing_date', [$from3, $to3])->sum("total");
 
         $invoices4 = Invoice::where('user_id', Auth::user()->id)
         ->where("year", $year)->whereBetween('billing_date', [$from4, $to4])->sum("total");
