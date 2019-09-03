@@ -49,6 +49,12 @@
                             {{ Form::select('customer_id', $customers, $invoice->customer->id , ['class' => 'form-control']) }}
                           </div>
                         </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="customerName">Bank Statement Number</label>
+                            <input type="text" class="form-control" name="bank_statement_id" value="{{ $invoice->bank_statement_id }}">
+                          </div>
+                        </div>
                         <div class="col-md-6">
                           <div class="form-group  invoice-doubble">
                             <label for="issue_date">Issue Date</label>

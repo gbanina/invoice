@@ -48,7 +48,7 @@
                           <th scope="row">{{$invoice->number}}/1/1</th>
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn btn-xs {{$btnColor[$invoice->status]}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <button type="button" class="btn btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{$invoice->status}} <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu">

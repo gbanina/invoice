@@ -45,6 +45,9 @@
                     <a class="navbar-brand" href="{{ url('/my-data') }}">
                         My Data
                     </a>
+                    <a class="navbar-brand" href="{{ url('/tax') }}">
+                        Tax
+                    </a>
                     @endguest
                 </div>
 

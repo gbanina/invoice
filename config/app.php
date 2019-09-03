@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,7 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
+        //PDF' => Barryvdh\DomPDF\Facade::class,
+        'Pdf'  => NahidulHasan\Html2pdf\Facades\Pdf::class,
 
     ],
 

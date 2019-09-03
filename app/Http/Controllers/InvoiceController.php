@@ -15,6 +15,7 @@ use App\Http\Requests\CreateInvoiceValidate;
 use App\Http\Helper\InvoiceHelp;
 use Illuminate\Support\Facades\Hash;
 use DB;
+use Pdf;
 
 class InvoiceController extends Controller
 {
@@ -33,11 +34,29 @@ class InvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+
+
+        //$document = Pdf::generatePdf('<h1>Test</h1>');
+        //pdf::stream('<h1>Test</h1>') ;
+
+        //dd($document);
+
+        $year = $request->input('year');
+
+        if($year == null)
+            $year = date('Y');
+
         $btnColor = array('Created' => 'btn-primary', 'Pending' => 'btn-danger', 'Paid' => 'btn-success');
-        $invoices = Invoice::where('user_id', Auth::user()->id)->get();
-        return view('invoice.index')->with('invoices', $invoices)->with('btnColor', $btnColor);
+        $invoices = Invoice::where('user_id', Auth::user()->id)
+        ->where("year", $year);
+
+        $years = DB::table('invoices')->distinct()->get(['year']);
+
+        return view('invoice.index')->with('invoices', $invoices->get())->with('years', $years)
+            ->with('sum', $invoices->sum('total'))->with('btnColor', $btnColor);
     }
 
     /**
@@ -119,6 +138,10 @@ class InvoiceController extends Controller
     {
         $invoice = Invoice::find($id);
         $myData = MyData::find(Auth::user()->id);
+        //Pdf::stream(view('design.02.index')->with('invoice', $invoice)
+          //              ->with('items', unserialize($invoice->data))
+            //                ->with('myData', $myData));
+
         return view('design.02.index')->with('invoice', $invoice)
                         ->with('items', unserialize($invoice->data))
                             ->with('myData', $myData);
@@ -172,6 +195,7 @@ class InvoiceController extends Controller
         $invoice->billing_date = Input::get('billing_date');
         $invoice->year = Input::get('year');
         $invoice->currency = Input::get('currency');
+        $invoice->bank_statement_id = Input::get('bank_statement_id');
 
         $items = array();
         $descriptions = Input::get('item_desc');

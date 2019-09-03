@@ -12,6 +12,22 @@ use Illuminate\Support\Facades\Input;
 
 class PublicController extends Controller
 {
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function index($hash)
+    {
+        $customer = Customer::where('hash', $hash)->first();
+        $invoices = Invoice::where('customer_id', $customer->id)->first();
+
+        $myData = MyData::find($customer->user_id);
+        return view('public.overview')->with('invoice', $invoice)
+                        ->with('items', unserialize($invoice->data))
+                            ->with('myData', $myData);
+    }
      /**
      * Display the specified resource.
      *

@@ -28,3 +28,6 @@ Route::resource('customers', 'CustomerController');
 
 Route::get('my-data', 'MyDataController@show');
 Route::put('my-data', 'MyDataController@save');
+
+Route::get('tax', 'OverviewController@tax');
+Route::get('turnover', 'OverviewController@turnover');
