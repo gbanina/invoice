@@ -219,7 +219,8 @@
 
                             <td>
                                 <!-- under right -->
-                                code
+                             <br>
+                             <br>
                                 {!! $barcode !!}
                             </td>
                         </tr>

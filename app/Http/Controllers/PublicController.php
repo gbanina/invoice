@@ -9,7 +9,7 @@ use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\MyData;
 use Illuminate\Support\Facades\Input;
-use DNS2D;
+use App\Http\Helper\BarcodeHelp;
 
 class PublicController extends Controller
 {
@@ -39,7 +39,7 @@ class PublicController extends Controller
     {
         $invoice = Invoice::where('hash', $hash)->first();
         $myData = MyData::find($invoice->user_id);
-        $barcode = (DNS2D::getBarcodeSVG("4445645656", "PDF417",2,2));
+        $barcode = BarcodeHelp::barcode($invoice);
         //$barcode = '<img src="data:image/png;base64,' . DNS2D::getBarcodePNG( "4445645656", "PDF417",2,2) . '" alt="barcode"   />';
 
         return view('design.02.index')->with('invoice', $invoice)

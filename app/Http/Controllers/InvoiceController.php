@@ -37,14 +37,58 @@ class InvoiceController extends Controller
      */
     public function index(Request $request)
     {
-      $zaglavlje = "HRVHUB30";
-      $valuta = "HRK";
-      $iznos = "000000000000100"; // 1kn
-      $naziv_platitelj = "";
-      $adresa_platitelj = "";
-      $iban = "";
+      $zaglavlje = "HRVHUB30\n";  //8
+      $valuta = "HRK\n";          //3
+      $iznos = "000000000000100\n"; // 1kn  //15
+      $naziv_platitelj = "Goran Banina                  \n";              //30
+      $adresa_platitelj_ulica = "Vidovecka 9                \n";       //27
+      $adresa_platitelj_mjesto = "42000 Varazdin             \n";      //27
+      $naziv_primatelj = "Ivo Ivic                 \n";              //25
+      $adresa_primatelj_ulica = "Adolfa Hitlera 9         \n";       //25
+      $adresa_primatelj_mjesto = "10000 Zagreb               \n";      //27
+      $iban = "HR1210010051863000160\n";                         //21
+      $model_racuna = "HR01\n";                 //4
+      $poziv_na_broj_primatelja = "7269-68949637676-00019\n";     //22
+      $sifra_namjene = "COST\n";                //4
+      $opis_placanja = "Troskovi za 1. mjesec              \n";                //35
 
-      $barcode = (DNS2D::getBarcodeSVG("4445645656", "PDF417"));
+      /*
+      var_dump(strlen($zaglavlje));
+      var_dump(strlen($valuta));
+      var_dump(strlen($naziv_platitelj));
+      var_dump(strlen($adresa_platitelj_ulica));
+      var_dump(strlen($adresa_platitelj_mjesto));
+      var_dump(strlen($naziv_primatelj));
+      var_dump(strlen($adresa_primatelj_ulica));
+      var_dump(strlen($adresa_primatelj_mjesto));
+      var_dump(strlen($iban));
+      var_dump(strlen($model_racuna));
+      var_dump(strlen($poziv_na_broj_primatelja));
+      var_dump(strlen($sifra_namjene));
+      var_dump(strlen($opis_placanja));
+*/
+
+      $code = "";
+      $code .= $zaglavlje;
+      $code .= $valuta;
+      $code .= $iznos;
+      $code .= $naziv_platitelj;
+      $code .= $adresa_platitelj_ulica;
+      $code .= $adresa_platitelj_mjesto;
+      $code .= $naziv_primatelj;
+      $code .= $adresa_primatelj_ulica;
+      $code .= $adresa_primatelj_mjesto;
+      $code .= $iban;
+      $code .= $model_racuna;
+      $code .= $poziv_na_broj_primatelja;
+      $code .= $sifra_namjene;
+      $code .= $opis_placanja;
+
+
+      //dd(strlen($code));
+      //var_dump($code);
+//dd($code);
+      $barcode = (DNS2D::getBarcodeSVG($code, "PDF417",1.7,1));
 
         //$document = Pdf::generatePdf('<h1>Test</h1>');
         //pdf::stream('<h1>Test</h1>') ;

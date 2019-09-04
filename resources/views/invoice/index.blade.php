@@ -8,6 +8,7 @@
     font-size: small !important;
 }
 </style>
+{!! $barcode !!}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -68,7 +69,7 @@
                           <td>{{$invoice->billing_date}}</td>
                           <td>{{$invoice->total}} {{$invoice->currency}}</td>
                           <td class="edit-wrap">
-                            <a href="javascript:printAll('{{ url('invoice/'.$invoice->id) }}')" target="_tab" class="glyphicon glyphicon-eye-open" aria-hidden="true"></a>
+                            <a href="{{ url('i/'.$invoice->hash) }}" target="_tab" class="glyphicon glyphicon-eye-open" aria-hidden="true"></a>
                             <a href="{{ url('invoice/'.$invoice->id.'/edit') }}" class="glyphicon glyphicon-pencil" aria-hidden="true"></a>
                             {{ Form::open(array('url' => url('invoice/' . $invoice->id), 'method' => 'delete', 'id' => 'form-' . $invoice->id)) }}
                                   <a href="#" class="glyphicon glyphicon-remove"
