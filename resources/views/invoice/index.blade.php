@@ -8,7 +8,6 @@
     font-size: small !important;
 }
 </style>
-{!! $barcode !!}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
