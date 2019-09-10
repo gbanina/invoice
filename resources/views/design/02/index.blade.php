@@ -28,7 +28,7 @@
     }
 
     .invoice-box table tr td:nth-child(2){
-        text-align:left;
+        text-align:right;
     }
 
     .invoice-box table tr td:nth-child(3){

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Helper;
-use Auth;
 use DNS2D;
 use App\Models\Invoice;
 use App\Models\MyData;
@@ -10,7 +9,7 @@ class BarcodeHelp {
 
   public static function barcode(\App\Models\Invoice $invoice){
 
-      $myData = MyData::find(Auth::user()->id);
+      $myData = MyData::find($invoice->user_id);
 
       $zaglavlje = "HRVHUB30\n";  //8
       $valuta = "HRK\n";          //3
