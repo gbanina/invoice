@@ -98,7 +98,7 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="{{ url('storage/'.$myData->image) }}" style="width:145px;height:32px">
+                                <img src="{{ url('storage/'.$myData->image) }}" style="width:440px;height:120px">
                             </td>
 
                             <td>
